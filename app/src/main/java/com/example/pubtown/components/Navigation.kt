@@ -80,8 +80,8 @@ fun Navigation() {
             NavigationBar(windowInsets = NavigationBarDefaults.windowInsets)
             {
                 NavigationBarItem(
-                    icon = { Icon(imageVector = Icons.Default.Map, contentDescription = "Home Screen") },
-                    label = { Text("Home Screen") },
+                    icon = { Icon(imageVector = Icons.Default.Map, contentDescription = "HomeScreen") },
+                    label = { Text("HomeScreen") },
                     selected = selectedIndex == 0,
                     onClick = {
                         selectedIndex = 0
@@ -89,8 +89,8 @@ fun Navigation() {
                     })
 
                 NavigationBarItem(
-                    icon = { Icon(imageVector = Icons.Default.LocationOn, contentDescription = "Map Screen") },
-                    label = { Text("Map Screen") },
+                    icon = { Icon(imageVector = Icons.Default.LocationOn, contentDescription = "MapScreen") },
+                    label = { Text("MapScreen") },
                     selected = selectedIndex == 1,
                     onClick = {
                         selectedIndex = 1
@@ -102,13 +102,13 @@ fun Navigation() {
     { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = "Home Screen",
+            startDestination = "HomeScreen",
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(route = "Home Screen") {
+            composable(route = "HomeScreen") {
                 HomeScreen(viewModel)
             }
-            composable(route = "Map Screen") {
+            composable(route = "MapScreen") {
                 MapScreen(viewModel)
             }
         }
