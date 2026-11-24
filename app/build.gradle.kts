@@ -51,4 +51,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+    // Location services
+    implementation("com.google.android.gms:play-services-location:21.4.0")
+
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:2.10.2")
+
+    // Icons (for the nav menu buttons)
+    implementation("androidx.compose.material:material-icons-core:1.7.8")
+    implementation("androidx.compose.material:material-icons-extended:1.7.8")
 }
