@@ -29,7 +29,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.pubtown.MainViewModel
-import com.example.pubtown.ui.screens.HomeScreen
 import com.example.pubtown.ui.screens.MapScreen
 
 
@@ -80,20 +79,11 @@ fun Navigation() {
             NavigationBar(windowInsets = NavigationBarDefaults.windowInsets)
             {
                 NavigationBarItem(
-                    icon = { Icon(imageVector = Icons.Default.Map, contentDescription = "HomeScreen") },
-                    label = { Text("HomeScreen") },
+                    icon = { Icon(imageVector = Icons.Default.LocationOn, contentDescription = "MapScreen") },
+                    label = { Text("MapScreen") },
                     selected = selectedIndex == 0,
                     onClick = {
                         selectedIndex = 0
-                        navController.navigate(route = "HomeScreen")
-                    })
-
-                NavigationBarItem(
-                    icon = { Icon(imageVector = Icons.Default.LocationOn, contentDescription = "MapScreen") },
-                    label = { Text("MapScreen") },
-                    selected = selectedIndex == 1,
-                    onClick = {
-                        selectedIndex = 1
                         navController.navigate(route = "MapScreen")
                     })
             }
@@ -102,12 +92,9 @@ fun Navigation() {
     { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = "HomeScreen",
+            startDestination = "MapScreen",
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(route = "HomeScreen") {
-                HomeScreen(viewModel)
-            }
             composable(route = "MapScreen") {
                 MapScreen(viewModel)
             }

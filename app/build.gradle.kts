@@ -62,4 +62,6 @@ dependencies {
     // Icons (for the nav menu buttons)
     implementation("androidx.compose.material:material-icons-core:1.7.8")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
+
+
 }
