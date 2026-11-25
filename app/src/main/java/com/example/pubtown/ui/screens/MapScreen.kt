@@ -40,6 +40,7 @@ fun MapScreen(viewModel: MainViewModel) {
                 zoom(11.0)
             }
         }
+        // just commit already
 
         MapboxMap(
             modifier = Modifier.fillMaxSize(),
