@@ -63,5 +63,13 @@ dependencies {
     implementation("androidx.compose.material:material-icons-core:1.7.8")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
 
+    implementation("com.mapbox.maps:android-ndk27:11.35.2")
+    // if your app does not require 16 KB page size support, the default dependency without -ndk27 can be used
+    // implementation("com.mapbox.maps:android:11.35.2")
+
+    implementation("com.mapbox.extension:maps-compose-ndk27:11.35.2")
+
 
 }
+
+
