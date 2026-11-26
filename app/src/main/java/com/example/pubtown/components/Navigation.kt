@@ -68,6 +68,7 @@ fun Navigation() {
     // Main display (top bar, screens, bottom nav bar)
     Scaffold(
         topBar = {
+            //Allows the top text to be centered
             CenterAlignedTopAppBar(
                 colors = topAppBarColors(
                     containerColor = Color(0xFFB18A56),
@@ -92,6 +93,7 @@ fun Navigation() {
                         navController.navigate(route = "MapScreen")
                     },
                     colors = NavigationBarItemDefaults.colors(
+                        //Color(0xFF######) allows you to change the color by changing ###### with the hex code of the color you want
                         selectedIconColor = Color(0xFFD85045),
                         selectedTextColor = Color(0xFF000000),
                         indicatorColor = Color(0xFFA5C271),
