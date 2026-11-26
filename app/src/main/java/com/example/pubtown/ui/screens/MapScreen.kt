@@ -48,7 +48,9 @@ fun MapScreen(viewModel: MainViewModel) {
         ) {
             Marker(
                 point = point,
-                color = Color.Red
+                color = Color.Red,
+                stroke = Color.Black
+
             )
         }
     }
