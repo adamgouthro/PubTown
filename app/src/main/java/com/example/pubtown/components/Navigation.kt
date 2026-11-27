@@ -1,12 +1,21 @@
 package com.example.pubtown.components
 
 import android.Manifest
+import android.R.attr.icon
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Map
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -30,7 +39,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.pubtown.MainViewModel
 import com.example.pubtown.ui.screens.MapScreen
-
+import androidx.compose.material3.NavigationBarItemDefaults
+import androidx.compose.ui.graphics.Color
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -65,10 +75,11 @@ fun Navigation() {
     // Main display (top bar, screens, bottom nav bar)
     Scaffold(
         topBar = {
-            TopAppBar(
+            //Allows the top text to be centered
+            CenterAlignedTopAppBar(
                 colors = topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
+                    containerColor = Color(0xFFB18A56),
+                    titleContentColor = Color(0xFF000000),
                 ),
                 title = {
                     Text("Pub Town")
@@ -76,7 +87,9 @@ fun Navigation() {
             )
         },
         bottomBar = {
-            NavigationBar(windowInsets = NavigationBarDefaults.windowInsets)
+            NavigationBar(
+                windowInsets = NavigationBarDefaults.windowInsets,
+                containerColor = Color(0xFFB18A56))
             {
                 NavigationBarItem(
                     icon = { Icon(imageVector = Icons.Default.LocationOn, contentDescription = "MapScreen") },
@@ -85,7 +98,16 @@ fun Navigation() {
                     onClick = {
                         selectedIndex = 0
                         navController.navigate(route = "MapScreen")
-                    })
+                    },
+                    colors = NavigationBarItemDefaults.colors(
+                        //Color(0xFF######) allows you to change the color by changing ###### with the hex code of the color you want
+                        selectedIconColor = Color(0xFFD85045),
+                        selectedTextColor = Color(0xFF000000),
+                        indicatorColor = Color(0xFFA5C271),
+                        unselectedIconColor = Color(0xFFD85045),
+                        unselectedTextColor = Color(0xFF000000),
+                    )
+                )
             }
         }
     )
