@@ -48,7 +48,10 @@ fun MapScreen(viewModel: MainViewModel) {
         ) {
             Marker(
                 point = point,
-                color = Color.Red
+                color = Color.Red,
+                //stroke changes the outline of the marker
+                stroke = Color.Black
+
             )
         }
     }
