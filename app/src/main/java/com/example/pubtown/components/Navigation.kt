@@ -40,11 +40,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.pubtown.MainViewModel
 import com.example.pubtown.ui.screens.MapScreen
 import androidx.compose.material3.NavigationBarItemDefaults
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
-import com.example.pubtown.R
 
 
 @OptIn(ExperimentalMaterial3Api::class)
